@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
+
+      <div class="field">
+        <label>Enter Length</label>
+        <!-- Adding event handler for rechecking the password length -->
+        <input class="input" (input)="onChangeLength($event)" />
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <!-- Usibng property binding to recheck everytime user checkout or uncheck the checkbox for Adding Alphabets -->
+
+          <input
+            class="checkbox"
+            (change)="onClickUseAlphabets()"
+            type="checkbox"
+          />
+          <label class="checkbox">Use Alphabets</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <!-- Usibng property binding to recheck everytime user checkout or uncheck the checkbox for Adding Number  -->
+
+          <input
+            class="checkbox"
+            (change)="onClickUseNumbers()"
+            type="checkbox"
+          />
+          <label class="checkbox">Use Numbers</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <!-- Usibng property binding to recheck everytime user checkout or uncheck the checkbox for Adding Special CHar -->
+          <input
+            class="checkbox"
+            (change)="onClickUseSpecial()"
+            type="checkbox"
+          />
+          <label class="checkbox">Use Symbols</label>
+        </div>
+      </div>
+
+      <div class="control">
+        <button
+          class="button is-primary"
+          [disabled]="!canGenerate()"
+          (click)="onButtonClick()"
+        >
+          Generate!
+        </button>
+      </div>
+
+      <div class="box">
+        <label>Your Pasword</label>
+        <input class="input" [value]="password" readonly />
+      </div>
+    </div>
+  </div>
+</div>
