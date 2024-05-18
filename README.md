@@ -8,3 +8,6 @@ Approach:-
 5. User click the generate button.
 6. Event handler triggered which generate a password using the property collected earlier.
 7. We update a password property on the component class instance which cause an update of the output input.
+
+
+And I used Bulma for styling.
